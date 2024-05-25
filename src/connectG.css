@@ -25,3 +25,11 @@ body{
     /* if I comment this out and find a way to overlay a grid */
     background-color: #f8d994;
 }
+
+.whiteP {
+    background-color: white;
+}
+
+.blackP {
+    background-color: black;
+}
