@@ -1,0 +1,59 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: clamp(0.5rem, 0.0882rem + 1.6471vw, 1.2rem);
+}
+
+
+#board {
+    /* The way I find height and width (amount of pieces in a row) * (tile width + (padding)*2) */
+    height: 50.625rem;
+    width: 50.625rem;
+    background-color: #6d592e;
+    border: 10px solid;
+    border-color: #6d592e;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    height: 41px;
+    width: 41px;
+    margin: 2px;
+    border-radius: 20%;
+
+    /* if I comment this out and find a way to overlay a grid */
+    background-color: #f8d994;
+}
+
+.whiteP {
+    background-color: white;
+    transition: background-color 0.5s;
+}
+
+.whiteP:hover {
+    background-color: red;
+}
+
+.blackP {
+    background-color: black;
+    transition: background-color 0.5s;
+}
+
+.blackP:hover {
+    background-color: blueviolet;
+}
+
+.curP{
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    
+    color: aquamarine;
+    background-color: brown;
+    border-radius: 100%;
+    width: 20%;
+    height: 40%;
+}
