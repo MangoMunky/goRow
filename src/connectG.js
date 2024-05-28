@@ -68,7 +68,7 @@ function setPiece() {
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
 
-    console.log(board[r][c]);
+    //console.log(board[r][c]);
 
     //makes sure you dont place a tile on another tile
     if(board[r][c] != blackP && board[r][c] != whiteP){
@@ -85,7 +85,7 @@ function setPiece() {
         
         //marks the boards 2d array equal to the current player color
         board[r][c] = curP;
-        console.log(board[r][c]);
+        //console.log(board[r][c]);
         
 
         let tile = this;
@@ -102,6 +102,7 @@ function setPiece() {
         }
         setCP();
     }
+    bot();
     checkW();
 }
 
@@ -161,5 +162,30 @@ function setCP() {
 }
 
 function bot(){
+    let p = -4
+    let checker = 0
+    danger = [];
 
+        
+    for (let r = 0; r < rows; r++) {
+        for(let c = 0; c < columns; c++){
+            let checker = 0
+            for(let rr = 0; rr < 4; rr++){
+                
+                if(board[r][c] != ' '){
+                    //horizontal win check
+                    if(board[r][c+rr] == board[r][c+rr+1] && board[r][c+rr]==whiteP){
+                        checker++;
+
+                        console.log(checker)
+                        if(checker>2){
+                            
+                            danger[r][c] == 4;
+                            console.log(danger[r][c])
+                        }
+                    }
+                }   
+            }
+        }
+    }
 }
