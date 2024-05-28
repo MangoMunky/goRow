@@ -164,10 +164,13 @@ function setCP() {
 function bot(){
     let p = -4
     let checker = 0
-    danger = [];
+    
+    const danger = [];
+    
 
         
     for (let r = 0; r < rows; r++) {
+        danger.push(new Array(rows).fill(0));
         for(let c = 0; c < columns; c++){
             let checker = 0
             for(let rr = 0; rr < 4; rr++){
@@ -177,11 +180,13 @@ function bot(){
                     if(board[r][c+rr] == board[r][c+rr+1] && board[r][c+rr]==whiteP){
                         checker++;
 
-                        console.log(checker)
-                        if(checker>2){
-                            
-                            danger[r][c] == 4;
-                            console.log(danger[r][c])
+                        if(checker>0){
+                            danger[r][c] = checker+1;
+                            console.log(danger[r][c]+" fart" + checker)
+                            if((board[r][c-1]==' ' && board[r][c+checker+1]==' ') || (checker+1) == 4){
+                                console.log("UBER DANGER")
+                            }
+                            //console.log(danger[r][c])
                         }
                     }
                 }   
