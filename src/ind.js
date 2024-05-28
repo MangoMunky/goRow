@@ -6,3 +6,6 @@ function closePopup(){
     let popup = document.getElementById("popup");
     popup.classList.remove("open-popup");
 }
+function sfxOF(){
+    
+}
