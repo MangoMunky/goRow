@@ -1,3 +1,5 @@
+//need to add a timer limit
+
 var whiteP = "White";
 var blackP = "Black"
 var curP = whiteP;
@@ -50,8 +52,8 @@ function setGame() {
 function setPiece() {
 
     //testing audio playing feature
-    var x = document.getElementById("myAudio"); 
-    x.play();
+    /* var x = document.getElementById("myAudio"); 
+    x.play(); */
     
 
     //checks if game is over
@@ -74,6 +76,10 @@ function setPiece() {
         
         //need to make some error handling for this because it doesnt work on my browser
         //makes tts of the current player
+        var mobS = document.getElementById("mobS"); 
+        mobS.load();
+        mobS.play();
+
         let utterance = new SpeechSynthesisUtterance(curP)
         speechSynthesis.speak(utterance);
         
@@ -155,47 +161,5 @@ function setCP() {
 }
 
 function bot(){
-    for (let r = 0; r < rows; r++) {
-        for(let c = 0; c < columns-4; c++){
-            var hor= -1;
-            var vert= -1;
-            var crossx = -1;
-            var crossy = -1;
-            for(let d = 0; d < 4; d++){
-                if(board[r][c] != ' '){
-                    t=d+1
-                    //horizontal win check
-                    console.log(d);
-                    if(board[r][c+d] == board[r][c+1+d]){
-                        hor++
-                        if(hor == 3){
-                            setW(r, c);
-                            return;
-                        }
-                    }
-                    if(board[r+d][c] == board[r+t][c]){
-                        vert++
-                        if(vert == 3){
-                            setW(r, c);
-                            return;
-                        }
-                    }
-                    if(board[r+d][c+d] == board[r+t][c+t]){
-                        crossx++
-                        if(crossx == 3){
-                            setW(r, c);
-                            return
-                        }
-                    }
-                    if(board[r-d][c+d] == board[r-t][c+t]){
-                        crossy++
-                        if(crossy == 3){
-                            setW(r, c);
-                            return
-                        }
-                    }
-                }
-            }
-        }
-    }
+
 }
