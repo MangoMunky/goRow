@@ -64,9 +64,11 @@ function setPiece() {
     
 
     //splits x and y components
+    let tile = this;
     let coords = this.id.split("-");
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
+    
 
     //console.log(board[r][c]);
 
@@ -74,13 +76,14 @@ function setPiece() {
     if(board[r][c] != blackP && board[r][c] != whiteP){
 
         
-        //need to make some error handling for this because it doesnt work on my browser
-        //makes tts of the current player
+        
         var mobS = document.getElementById("mobS"); 
         mobS.load();
         mobS.play();
 
-        let utterance = new SpeechSynthesisUtterance(curP)
+        //need to make some error handling for this because it doesnt work on my browser
+        //makes tts of the current player
+        let utterance = new SpeechSynthesisUtterance((r+1) + " " + (c+1))
         speechSynthesis.speak(utterance);
         
         //marks the boards 2d array equal to the current player color
@@ -88,8 +91,9 @@ function setPiece() {
         //console.log(board[r][c]);
         
 
-        let tile = this;
+        
         console.log(tile)
+        console.log(this);
     
         //sets tile color
         if(curP == whiteP) {
@@ -100,10 +104,12 @@ function setPiece() {
             tile.classList.add("blackP")
             curP = whiteP;
         }
-        setCP();
+        
     }
-    bot();
+    
     checkW();
+    bot(tile);
+    setCP();
 }
 
 //checks if you won or not
@@ -161,7 +167,7 @@ function setCP() {
     let sCP = document.getElementById("curP").textContent="current player is " + curP;
 }
 
-function bot(){
+function bot(tile){
     let p = -4
     let checker = 0
     
@@ -183,8 +189,19 @@ function bot(){
                         if(checker>0){
                             danger[r][c] = checker+1;
                             console.log(danger[r][c]+" fart" + checker)
-                            if((board[r][c-1]==' ' && board[r][c+checker+1]==' ') || (checker+1) == 4){
+                            if((board[r][c-1]==' ' && board[r][c+checker+1]==' ' && checker>1)){
+                                (r.toString() + "-" +c.toString()).classList.add("blackP")
+                                board[r][c] = blackP;
                                 console.log("UBER DANGER")
+                                curP = whiteP;
+                            }
+                            else if((checker+1) == 4){
+                                //makes board piece black
+                                tile(r+"-"+c-1).classList.add("blackP")
+                                board[r][c] = blackP;
+                                console.log("UBER DANGER")
+                                curP = whiteP;
+
                             }
                             //console.log(danger[r][c])
                         }
