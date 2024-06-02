@@ -75,11 +75,13 @@ function setPiece() {
     //makes sure you dont place a tile on another tile
     if(board[r][c] != blackP && board[r][c] != whiteP){
 
-        
-        
-        var mobS = document.getElementById("mobS"); 
-        mobS.load();
-        mobS.play();
+        console.log(localStorage.getItem("OF", "on"));
+        console.log(cowboy);
+        if(localStorage.getItem("OF", "on") == "on"){
+            var mobS = document.getElementById("mobS");
+            mobS.load();
+            mobS.play();
+        }
 
         //need to make some error handling for this because it doesnt work on my browser
         //makes tts of the current player
