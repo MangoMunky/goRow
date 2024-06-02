@@ -1,3 +1,4 @@
+//creates popup
 function openPopup(){
     let popup = document.getElementById("popup");
     popup.classList.add("open-popup");
@@ -13,53 +14,69 @@ function sfxOO(){
     if(localStorage.getItem("OF", "on") == null && localStorage.getItem("OF", "off") == null){
         localStorage.setItem("OF", "on");
     }
-    const cat = localStorage.getItem("OF", "off");
+    var sfxSw = localStorage.getItem("OF", "off");
     
-    if(cat == null){
-        const cat = localStorage.getItem("OF", "on");
+    if(sfxSw == null || sfxSw!= "off "){
+        sfxSw = localStorage.getItem("OF", "on");
     }
-    if(cat == "on"){
+    if(sfxSw == "on"){
         localStorage.removeItem("OF", "on");
         localStorage.setItem("OF", "off");
     }
-    else if(cat == "off"){
+    else if(sfxSw == "off"){
         localStorage.removeItem("OF", "off");
         localStorage.setItem("OF", "on");
     }
-    console.log(cat)
+    console.log(sfxSw + " sfx")
+}
+
+//makes a box checked or unchecked
+function oOC(x, y){
+    if(localStorage.getItem(x, "off") == "off"){
+        document.getElementById(y).checked = false;
+    }
+    else if(localStorage.getItem(x, "on") == "on"){
+        document.getElementById(y).checked = true;
+    }
 }
 
 
-let mexico = localStorage.getItem("OF", "on") + "fire" + localStorage.getItem("OF", "off");
-let cowboy = mexico;
+//Sets game as either single player bot or 1v1
+function singleP(x){
+    if(x == 'off'){
+        localStorage.removeItem("sP", "on")
+    }
+    else if(x=='on'){
+        localStorage.removeItem("sP", "off")
+    }
+    localStorage.setItem("sP", x);
+    document.location='connectG.html';
+}
 
 window.onload = function() {
-    if(localStorage.getItem("OF", "off") == "off"){
-        document.getElementById("checkbox").checked = false;
-    }
-    else if(localStorage.getItem("OF", "on") == "on"){
-        document.getElementById("checkbox").checked = true;
-    }
+    oOC("OF", "cB");
 
-    document.getElementById("pepe1").onmouseover = function() {mouseOver()};
-    document.getElementById("pepe1").onmouseout = function() {mouseOut()};
+    
 
-    document.getElementById("pepe").onmouseover = function() {mouseOver()};
-    document.getElementById("pepe").onmouseout = function() {mouseOut()};
+    document.getElementById("oVOB").onmouseover = function() {mouseOver()};
+    document.getElementById("oVOB").onmouseout = function() {mouseOut()};
+
+    document.getElementById("botB").onmouseover = function() {mouseOver()};
+    document.getElementById("botB").onmouseout = function() {mouseOut()};
 }
 
 
 function mouseOver() {
-  document.getElementById("wog").style.color = "white";
-  document.getElementById("wog").style.background = "black";
-  document.getElementById("wog").style.transition = "background-color 0.5s, color 0.4s";
+  document.getElementById("body").style.color = "white";
+  document.getElementById("body").style.background = "black";
+  document.getElementById("body").style.transition = "background-color 0.5s, color 0.4s";
   //document.getElementById("sR").style.border-top-right-radius = "25px";
 }
 
 function mouseOut() {
-  document.getElementById("wog").style.color = "black";
-  document.getElementById("wog").style.background = "white";
-  document.getElementById("wog").style.transition = "background-color 0.5s, color 0.4s";
+  document.getElementById("body").style.color = "black";
+  document.getElementById("body").style.background = "white";
+  document.getElementById("body").style.transition = "background-color 0.5s, color 0.4s";
   //document.getElementById("sR").style.border-top-right-radius = "0px";
   
 }

@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"
-        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Connect 5</title>
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="ind.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 5</title>
 
-    <body id = "wog"> 
-            <div class = "wiggler">
-                <h1>Connect 5</h1>
-            </div>
-            
-        
-        
+    <link rel="stylesheet" href="styles.css">
+    <script src="ind.js"></script>
+</head>
 
-            
+<body id="body">
+    <div class="title">
+        <h1>Connect 5</h1>
+    </div>
 
-            <div class="container" id="container">
-                <button id = "pepe1" onclick="document.location='connectG.html'" class = "btn" >1v1</button>
-                <button id ="sR" type="submit" class="btn" onclick="openPopup()">Settings</button>
-                <button id = "pepe" type="submit" class="btn">bot</button>
-                <div class="popup" id="popup">
-                    <h2>TY ;)</h2>
-                    <p>we got all ur deets</p>
-                    <h2>Toggle switch</h2>
-        
-                    <label class="switch">
-                        <input type="checkbox" id="checkbox" checked onclick="sfxOO()">
-                        <span class="slider round"></span>
-                        </label>
-        
-                    <button class="btnC" type="button" onclick="closePopup()">OK</button>
-                </div>
-            </div>
+    <!--Container that holds buttons and popup-->
+    <div class="container" id="container">
+        <button id="oVOB" onclick="singleP('off')" class="btn">1v1</button>
+        <button id="sR" type="submit" class="btn" onclick="openPopup()">Settings</button>
+        <button id="botB" type="submit" onclick="singleP('on')" class="btn">bot</button>
+
+        <!--popup after pressing settings button-->
+        <div class="popup" id="popup">
+            <h2>TY ;)</h2>
+            <p>we got all ur deets</p>
+
+            <!--Switches to turn on and off various settings-->
+            <label>
+                <h2>SFX</h2>
+                <input type="checkbox" id="cB" checked onclick="sfxOO()">
+                <span class="slider round"></span>
+            </label>
+
+            <label>
+                <h2>TTS</h2>
+                <input type="checkbox" id="cB1" checked onclick="ttsOO()">
+                <span class="slider round"></span>
+            </label>
+
+            <button class="btnC" type="button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
 
-        
-    </body>
+
+</body>
+
 </html>

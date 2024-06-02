@@ -75,8 +75,10 @@ function setPiece() {
     //makes sure you dont place a tile on another tile
     if(board[r][c] != blackP && board[r][c] != whiteP){
 
-        console.log(localStorage.getItem("OF", "on"));
-        console.log(cowboy);
+        //console.log(localStorage.getItem("OF", "on"));
+        //console.log(cowboy);
+        console.log(localStorage.getItem("OF", "on") + " sfx");
+        console.log(localStorage.getItem("OF", "ooff") + " sfx");
         if(localStorage.getItem("OF", "on") == "on"){
             var mobS = document.getElementById("mobS");
             mobS.load();
@@ -85,8 +87,12 @@ function setPiece() {
 
         //need to make some error handling for this because it doesnt work on my browser
         //makes tts of the current player
-        let utterance = new SpeechSynthesisUtterance((r+1) + " " + (c+1))
-        speechSynthesis.speak(utterance);
+
+        
+        /* if(localStorage.getItem("ttsOF", "on") == "on"){
+            let utterance = new SpeechSynthesisUtterance((r+1) + " " + (c+1))
+            speechSynthesis.speak(utterance);
+        } */
         
         //marks the boards 2d array equal to the current player color
         board[r][c] = curP;
@@ -110,7 +116,9 @@ function setPiece() {
     }
     
     checkW();
-    bot(tile);
+    if(localStorage.getItem("sP", "on")=="on"){
+        bot(tile);
+    }
     setCP();
 }
 
@@ -192,14 +200,14 @@ function bot(tile){
                             danger[r][c] = checker+1;
                             console.log(danger[r][c]+" fart" + checker)
                             if((board[r][c-1]==' ' && board[r][c+checker+1]==' ' && checker>1)){
-                                (r.toString() + "-" +c.toString()).classList.add("blackP")
+                                document.getElementById((r-1).toString() + "-" +  c.toString()).classList.add("blackP");
                                 board[r][c] = blackP;
                                 console.log("UBER DANGER")
                                 curP = whiteP;
                             }
                             else if((checker+1) == 4){
                                 //makes board piece black
-                                tile(r+"-"+c-1).classList.add("blackP")
+                                document.getElementById((r-1).toString() + "-" +  c.toString()).classList.add("blackP");
                                 board[r][c] = blackP;
                                 console.log("UBER DANGER")
                                 curP = whiteP;
