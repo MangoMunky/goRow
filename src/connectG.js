@@ -12,8 +12,8 @@ var board;
 
 
 //board dimensions
-var rows = 18;
-var columns = 18;
+var rows = 19;
+var columns = 19;
 
 window.onload = function() {
     
@@ -182,8 +182,6 @@ function bot(tile){
     let checker = 0
     
     const danger = [];
-    
-
         
     for (let r = 0; r < rows; r++) {
         danger.push(new Array(rows).fill(0));
@@ -200,20 +198,21 @@ function bot(tile){
                             danger[r][c] = checker+1;
                             console.log(danger[r][c]+" fart" + checker)
                             if((board[r][c-1]==' ' && board[r][c+checker+1]==' ' && checker>1)){
-                                document.getElementById((r-1).toString() + "-" +  c.toString()).classList.add("blackP");
+                                document.getElementById((r).toString() + "-" +  (c-1).toString()).classList.add("blackP");
                                 board[r][c] = blackP;
                                 console.log("UBER DANGER")
                                 curP = whiteP;
                             }
                             else if((checker+1) == 4){
                                 //makes board piece black
-                                document.getElementById((r-1).toString() + "-" +  c.toString()).classList.add("blackP");
+                                document.getElementById((r).toString() + "-" +  (c-1).toString()).classList.add("blackP");
                                 board[r][c] = blackP;
                                 console.log("UBER DANGER")
                                 curP = whiteP;
 
                             }
                             //console.log(danger[r][c])
+
                         }
                     }
                 }   

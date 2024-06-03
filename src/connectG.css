@@ -32,8 +32,8 @@ h1{
 
 #board {
     /* The way I find height and width (amount of pieces in a row) * (tile width + (padding)*2) */
-    height: 50.625rem;
-    width: 50.625rem;
+    height: 741px;
+    width: 741px;
     background-color: #6d592e;
     border: 10px solid;
     border-color: #6d592e;
@@ -44,8 +44,8 @@ h1{
 }
 
 .tile {
-    height: 41px;
-    width: 41px;
+    height: 35px;
+    width: 35px;
     margin: 2px;
     border-radius: 20%;
 
