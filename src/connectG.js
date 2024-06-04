@@ -38,7 +38,7 @@ function setGame() {
             tile.classList.add("tile");
             
             //lets you tab over the element and adds title to each div
-            tile.title=(c+1).toString()+ "-" +(r+1).toString();
+            tile.title="column " + (c+1).toString() + " row " + (r+1).toString();
             tile.tabIndex="0";
 
 
