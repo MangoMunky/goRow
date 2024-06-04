@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8" <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>goRow</title>
@@ -11,13 +10,21 @@
 </head>
 
 <body>
-    <h1>Connect 5</h1>
-    <button onclick="document.location='index.html'" class="mainB">return 🏠 home</button>
-    <div class="curP" tabindex="0">
-        <h1 id="curP">current player is White</h1>
+    <div>
+        <h1>Connect 5</h1>
     </div>
-    <p id="winner"></p>
-    <div id="board" title = "Game Board"></div>
+    <div class="board-cont">
+        <div class="menu">
+            <button onclick="document.location='index.html'" class="mainB">return 🏠 home</button>
+            <div class="curP" tabindex="0">
+                <h1 id="curP">current player is White</h1>
+            </div>
+        </div>
+        
+        <span id="winner"></span>
+        <div class="board-pos" id="board" title = "Game Board"></div>
+    </div>
+    
 
 </body>
 
