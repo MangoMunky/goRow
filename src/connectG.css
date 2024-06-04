@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     font-size: clamp(0.5rem, 0.0882rem + 1.6471vw, 1.2rem);
@@ -7,11 +7,11 @@ body{
     margin: 0;
 }
 
-h1{
+h1 {
     font-size: clamp(2.5rem, 1.9231rem + 2.3077vw, 4rem);
 }
 
-.mainB{
+.mainB {
     font-size: clamp(0.5rem, 0.0882rem + 1.6471vw, 1.2rem);
     position: absolute;
     left: 80%;
@@ -24,7 +24,7 @@ h1{
     transition: color 0.2s, background-color 0.4s, border-color 0.2s;
 }
 
-.mainB:hover{
+.mainB:hover {
     color: white;
     border-color: white;
     background-color: black;
@@ -38,9 +38,13 @@ h1{
     border: 10px solid;
     border-color: #6d592e;
     border-radius: 2%;
+
+
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+
+
 }
 
 .tile {
@@ -71,12 +75,12 @@ h1{
     background-color: blueviolet;
 }
 
-.curP{
+.curP {
+    display: flex;
+    justify-content: flex-end;
     text-align: center;
-    position: absolute;
     top: 30%;
-    left: 75%;
-    
+
     color: aquamarine;
     background-color: brown;
     border-radius: 100%;
