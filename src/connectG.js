@@ -29,7 +29,7 @@ function setGame() {
         for (let c = 0; c < columns; c++) {
 
             row.push(' ');
-            let tile = document.createElement("div");
+            let tile = document.createElement("button");
             
             //inserts row and column position to tile
             tile.id = r.toString() + "-" + c.toString();
@@ -83,20 +83,8 @@ function setPiece() {
             mobS.play();
         }
 
-        //need to make some error handling for this because it doesnt work on my browser
-        //makes tts of the current player
-
-
-        /* if(localStorage.getItem("ttssfx", "on") == "on"){
-            let utterance = new SpeechSynthesisUtterance((r+1) + " " + (c+1))
-            speechSynthesis.speak(utterance);
-        } */
-
         //marks the boards 2d array equal to the current player color
         board[r][c] = curP;
-        //console.log(board[r][c]);
-
-
 
         console.log(tile)
         console.log(this);
@@ -166,6 +154,7 @@ function checkW() {
 //sets the winner
 function setW(r, c) {
     let winner = document.getElementById("winner");
+    document.getElementById("winner").title = "winner"
     if (board[r][c] == blackP) {
         winner.innerText = "black wins";
     }

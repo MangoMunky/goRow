@@ -1,6 +1,6 @@
 window.onload = function () {
     //sets a checkbox on or off
-    oOC("sfx", "cB");
+    oOC("sfx", "cBSFX");
 
     //changes website background on hover
     document.getElementById("oVOB").onmouseover = function () { mouseOver() };

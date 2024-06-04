@@ -52,6 +52,7 @@ h1 {
     width: 35px;
     margin: 2px;
     border-radius: 20%;
+    border: 0px;
 
     /* if I comment this out and find a way to overlay a grid */
     background-color: #f8d994;
