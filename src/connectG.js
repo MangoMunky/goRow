@@ -16,7 +16,7 @@ var columns = 19;
 //tells program what to do when page loads
 window.onload = function () {
     if (localStorage.getItem("sP", "on") == "on") {
-        alert("Bot Is Not Finished")
+        alert("Bot Is Not Finished");
     }
     setGame();
 }

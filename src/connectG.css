@@ -33,6 +33,7 @@ body {
     border-color: black;
     border-radius: 5px;
     color: black;
+    text-decoration: none;
     transition: color 0.2s, background-color 0.4s, border-color 0.2s;
 }
 
@@ -100,13 +101,12 @@ body {
 }
 
 #curP{
-    
     color: white;
     font-size: clamp(1rem, 0.2308rem + 3.0769vw, 3rem);
 }
 
 .curCont{
-    max-height: fit-content;
+    max-height: max-content;
     width: auto;
     margin: 20px;
 }
