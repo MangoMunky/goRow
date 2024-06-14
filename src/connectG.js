@@ -155,6 +155,7 @@ function checkW() {
 
 //sets the winner
 function setW(r, c) {
+    document.getElementById("myModal").style.display = "block";
     let winner = document.getElementById("winner");
     document.getElementById("winner").title = "winner"
     if (board[r][c] == blackP) {
@@ -214,3 +215,4 @@ function bot(tile) {
         }
     }
 }
+

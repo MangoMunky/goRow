@@ -7,60 +7,84 @@ body {
     margin: 0;
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+}
+
+.modalContent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
 .title {
-    font-size: clamp(2.5rem, 1.9231rem + 2.3077vw, 4rem);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(3.5rem, 2.9231rem + 2.3077vw, 5rem);
+    padding: 1em 0 1em 0;
+    margin: 0;
 }
 
 .board-cont {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-
+    flex-wrap: wrap;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .mainB {
-    font-size: clamp(0.5rem, 0.0882rem + 1.6471vw, 1.2rem);
-    /* position: absolute; */
-    /* left: 80%; */
+    font-size: clamp(1rem, 0.6154rem + 1.5385vw, 2rem);
     background-color: white;
-    border: 4px solid;
+    font-weight: bold;
+    border: 0.25em solid;
     border-color: black;
     border-radius: 5px;
     color: black;
     text-decoration: none;
     transition: color 0.2s, background-color 0.4s, border-color 0.2s;
+    margin-bottom: 1em;
 }
 
 .mainB:hover {
-    color: white;
-    border-color: white;
-    background-color: black;
+    background-color: rgb(253, 255, 223);
+    border-color: rgb(29, 29, 29);
 }
 
 #board {
     /* The way I find height and width (amount of pieces in a row) * (tile width + (padding)*2) */
-    height: 741px;
-    width: 741px;
+    max-width: 900px;
+    width: 70vw;
+    aspect-ratio: 1/1;
     background-color: #6d592e;
-    border: 10px solid;
+    border: 0.625em solid;
     border-color: #6d592e;
     border-radius: 2%;
     margin: 1%;
 
     /* margin: 0 auto; */
-    display: inline-table;
+    /* display: inline-table; */
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(19, 1fr);
 }
 
 .tile {
-    height: 35px;
-    width: 35px;
-    margin: 2px;
+
+    margin: 0.15vw;
     border-radius: 20%;
     border: 0px;
 
@@ -86,27 +110,28 @@ body {
     background-color: blueviolet;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .curP {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 40%;
+    aspect-ratio: 1/1;
     
     background-color: black;
     border-radius: 100%;
-    margin: 5px;
+    padding: 0.6em;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 #curP{
     color: white;
     font-size: clamp(1rem, 0.2308rem + 3.0769vw, 3rem);
-}
-
-.curCont{
-    max-height: max-content;
-    width: auto;
-    margin: 20px;
+    margin: 0;
 }
